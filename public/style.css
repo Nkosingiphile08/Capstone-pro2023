@@ -1,0 +1,6 @@
+.modal{
+    width: min(400px, 90vw);
+    height: 200px;
+    border: 1px solid #03a4ff;
+    
+}

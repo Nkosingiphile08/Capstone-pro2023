@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <i class="fa fa-home fa-2x"></i>
+                    <br>Home
+                </a>
+</section>
+
+    <section>
+
+        <div class="container" >
+            <h1>Profile</h1>
+            <div class="card" role="document">
+                <div class="card">
+                    <div class="card-header m-2 mb-2">
+                        <h2 class="card-title text-lg-start">
+                            Hi! <%= user.name %>
+                        </h2>
+                    
+                    </div>
+                    <div class="card-body">
+                        <!-- User Information Form -->
+                        <p class="text-bg-info p-1 text-light">
+                            You Contact Info
+                        </p>
+                        <div>
+                            <p>Contacts: <%=user.contacts%></p>
+                            <p>Email: <%=user.email%></p>
+                        </div>
+                        <div>
+                            <p class="text-bg-info p-1 text-light">
+                                Active Appointment
+                            </p>
+                            <p><%=JSON.parse(user.appointments) ? JSON.parse(user.appointments).doctor : "" %></p>
+                            <p><%=JSON.parse(user.appointments) ? JSON.parse(user.appointments).date : ""%></p>
+                            <p><%=JSON.parse(user.appointments) ? JSON.parse(user.appointments).time : ""%></p>
+                        </div>
+
+                        <div class="container">
+                            <h3>Book Appointment.</h3>
+                            <a href="/appointment" class="btn btn-primary">Go to booking page</a>
+                        </div>
+                        <!-- Links to Educational Articles -->
+                        <!-- <h5 class="mt-4">Links to Educational Articles:</h5>
+                        <ul>
+                            <li><a href="#">Nutrition Articles</a></li>
+                            <li><a href="#">Educational Articles</a></li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Section>
+<section>
+    <nav class="navbar-bottom">
+        <div class="navbar-content">
+            <ul>
+                <li></li>
+                <a href="bptracking.html"><i class="fa fa-heartbeat fa-2x"></i>BP tracking</a>
+                <a href="appointment.html"><i class="fa fa-medkit fa-2x"></i>Appointment</a>
+                <a href="community.html"><i class="fa fa-comments-o fa-2x"></i>Community support</a>
+                <a href="recommendations.html"><i class="fa fa-stethoscope fa-2x"></i>Recommendations</a>
+                <li></li>
+            </ul>
+        </div>
+    </nav>
+</section>
+</body>
+
+</html>
+
+<!-- <body>
+
+    <!-- <div>
+        <h1>create profile</h1>
+
+        <input type="text" placeholder="full name">
+        <br>
+        <input type="text" placeholder="country">
+        <br>
+        <button type="submit" href="index.html">sign up</button>
+    </div> -->
