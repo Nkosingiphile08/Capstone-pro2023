@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>community support</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="navbar-top">
+        <div class="navbar-content">
+            <ul>
+                <li></li>
+                <a href="index.html" class="notifications-tab"><i class="fa fa-home fa-2x"></i> Home</a>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="notifications-tab">
+                    <i id="open-notifications" class="fa fa-bell fa-2x"></i>
+                    <div class="notifications-content">
+                        <!-- Notifications will appear here -->
+                    </div>
+                </li>
+                <div class="menu-bar">
+                    <div x-data="{ isOpen: false }">
+                        <!-- Toggle button for the menu -->
+                        <i @click="isOpen = !isOpen" class="fa fa-bars fa-2x"></i>
+                        <!-- Menu container -->
+                        <span x-show="isOpen" class="menu">
+                            <!-- Menu items -->
+                            <ol>
+                                <i><a href="index.html">Home</a></li>
+                                    <li><a href="languages.html">Languages</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="index.html">Logout</a></li>
+                            </ol>
+                        </span>
+                    </div>
+                </div>
+                <li></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+    <div class="section">
+        <h1 class="content">community support</h1>
+
+        <section class="directory">
+            <div x-data="{ posts: [], postTitle: '', postContent: '' }">
+                <h2>Create a Post</h2>
+                <form
+                    @submit.prevent="posts.push({ title: postTitle, content: postContent }); postTitle = ''; postContent = '';">
+                    <label for="postTitle"></label>
+                    <input type="text" id="postTitle" placeholder="title" x-model="postTitle" required>
+                    <br>
+                    <label for="postContent"></label>
+                    <textarea id="postContent" placeholder="write post" x-model="postContent" rows="4"
+                        required></textarea>
+                    <br>
+                    <button type="submit">Create Post</button>
+                </form>
+        </section>
+                <br>
+
+                <section class="directory">
+                    <div id="postList">
+                <ul>
+                    <template x-for="(post, index) in posts" :key="index">
+                        <li>
+                            <h3 x-text="post.title"></h3>
+                            <p x-text="post.content"></p>
+                        </li>
+                    </template>
+                </ul>
+                    </div>
+                </section>
+            </div>
+    </div>
+
+    <nav class="navbar-bottom">
+        <div class="navbar-content">
+            <ul>
+                <li></li>
+                <a href="bptracking.html"><i class="fa fa-heartbeat fa-2x"></i>BP tracking</a>
+                <a href="appointment.html"><i class="fa fa-medkit fa-2x"></i>Appointment</a>
+                <a href="community.html"><i class="fa fa-comments-o fa-2x"></i>Community support</a>
+                <a href="recommendations.html"><i class="fa fa-stethoscope fa-2x"></i>Recommendations</a>
+                <li></li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const openButton = document.getElementById('open-notifications');
+        const notificationsContent = document.querySelector('.notifications-content');
+
+        openButton.addEventListener('click', () => {
+            notificationsContent.style.display = notificationsContent.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Close notifications when clicking outside the tab
+        document.addEventListener('click', (event) => {
+            if (!notificationsContent.contains(event.target) && event.target !== openButton) {
+                notificationsContent.style.display = 'none';
+            }
+        });
+        const notification = document.createElement('div');
+        notification.classList.add('notification');
+        notification.innerHTML = `
+            <p>You have a new message!</p>
+            <span class="timestamp">2 minutes ago</span>
+            `;
+        notificationsContent.appendChild(notification);
+    </script>
+
+</body>
+
+</html>

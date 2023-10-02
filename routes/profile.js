@@ -21,6 +21,9 @@ router.get("/appointment",  (req, res) => {
    res.render("appointment", {doctors: doctors})
 })
 
+router.get("/community-support", function (req,res) {
+ res.render("community")
+})
 
 router.post("/login", (req, res) => {
     db.get(`SELECT * FROM users WHERE email = ? AND password = ?`, [req.body.email, req.body.password], (err, row) => {
