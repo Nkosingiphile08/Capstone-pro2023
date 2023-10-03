@@ -5,6 +5,13 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./database/database.db');
 
 
+// app.use(express.static('views')); 
+
+
+// router.get('/index', (req, res) => {
+//     res.render('index'); // Assuming your template file is in a "views" directory
+//   });
+  
 router.get("/login",  (req, res) => {
    res.render("login")
 })
@@ -24,6 +31,18 @@ router.get("/appointment",  (req, res) => {
 router.get("/community-support", function (req,res) {
  res.render("community")
 })
+
+router.get("/BPtracking", function(req,res) {
+res.render("bptracking")
+})
+
+router.get("/about", function(req,res) {
+    res.render("about")
+    })
+
+router.get("/bmi", function(req,res) {
+    res.render('bmi')
+  })
 
 router.post("/login", (req, res) => {
     db.get(`SELECT * FROM users WHERE email = ? AND password = ?`, [req.body.email, req.body.password], (err, row) => {

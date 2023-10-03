@@ -15,6 +15,7 @@ process.on('SIGINT', () => {
 });
 
 const tableName = 'users';
+// const tableName = 'appointments';
 
 // Create the table if it doesn't exist
 db.run(`

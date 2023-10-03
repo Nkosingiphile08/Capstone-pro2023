@@ -1,3 +1,14 @@
+.background-image {
+    background-image: url("/images/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* Ensure the section covers the entire viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
 .modal{
     width: min(400px, 90vw);
     height: 200px;
