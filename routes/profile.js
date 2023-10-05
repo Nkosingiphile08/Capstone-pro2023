@@ -5,13 +5,8 @@ const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('./database/database.db');
 
 
-// app.use(express.static('views')); 
+router.use(express.static('public')); 
 
-
-// router.get('/index', (req, res) => {
-//     res.render('index'); // Assuming your template file is in a "views" directory
-//   });
-  
 router.get("/login",  (req, res) => {
    res.render("login")
 })
@@ -32,16 +27,35 @@ router.get("/community-support", function (req,res) {
  res.render("community")
 })
 
-router.get("/BPtracking", function(req,res) {
-res.render("bptracking")
+router.get("/bp-tracking", function (req,res) {
+res.render("bp-tracking")
 })
 
-router.get("/about", function(req,res) {
+router.get("/about", function (req,res) {
     res.render("about")
     })
 
-router.get("/bmi", function(req,res) {
+router.get("/bmi", function (req,res) {
     res.render('bmi')
+  })
+
+router.get("/languages", function (req,res) {
+    res.render("languages")
+  })
+  
+router.get("/index", function (req, res) {
+    res.render("index")
+  })
+
+router.get("/nutrition", function (req, res) {
+    res.render("nutrition")
+  })
+  router.get("/recommendations", function (req, res) {
+    res.render("recommendations")
+  })  
+// GET route to render the page with the form
+router.get("/delete-null-form", function (req,res) {
+    res.render('delete-null-form') 
   })
 
 router.post("/login", (req, res) => {
@@ -72,7 +86,6 @@ router.post("/signup", (req, res) => {
 })
 
 
-
 router.post("/appointments", (req, res) => {
     const data = {
         time: req.body.time,
@@ -101,4 +114,19 @@ router.post("/appointments", (req, res) => {
     })
 })
 
+// POST route to handle the deletion request
+router.post('/delete-null-records', (req, res) => {
+    const columnName = 'appointments'; // Replace with the actual column name
+    const tableName = 'users'; // Replace with the actual table name
+    const sql = `DELETE FROM ${tableName} WHERE ${columnName} IS NULL`;
+  
+    db.run(sql, [], (err) => {
+      if (err) {
+        res.status(500).send('Error deleting records');
+      } else {
+        res.send('Records with NULL values deleted successfully');
+      }
+    });
+  });
+  
 module.exports = router

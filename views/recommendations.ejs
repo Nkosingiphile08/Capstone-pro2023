@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypertension Recommendations</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index" class="notifications-tab"><i class="fa fa-home fa-2x"></i>Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
+    <div class="container mt-5">
+        <h1 class="text-center">Hypertension Lifestyle Recommendations</h1>
+
+        <div id="recommendations" class="mt-4">
+            <!-- Recommendations table will be displayed here -->
+        </div>
+
+        <!-- Embed the video here -->
+        <div class="mt-4">
+            <h2 class="text-center">Nutrition and Exercise Video</h2>
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://youtu.be/3tm7ikZuRmE?t=109" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simulated prediction result (0 for low risk, 1 for high risk)
+        const hypertensionStatus = 1;
+
+        // Define recommendations based on hypertension status
+        const recommendations = {
+            0: [
+                "Exercise regularly.",
+                "Eat a healthy diet.",
+                "Reduce salt (sodium) in your diet.",
+                "Limit alcohol.",
+                "Get a good night's sleep.",
+                "Reduce stress."
+            ],
+            1: [
+                "Manage high blood pressure.",
+                "Exercise regularly.",
+                "Eat a healthy diet.",
+                "Reduce salt (sodium) in your diet.",
+                "Limit alcohol.",
+                "Quit tobacco.",
+                "Get a good night's sleep.",
+                "Reduce stress."
+            ]
+        };
+        
+        // Get the recommendations container
+        const recommendationsContainer = document.getElementById("recommendations");
+
+        // Display personalized recommendations in a Bootstrap table
+        const recommendation = recommendations[hypertensionStatus];
+        if (recommendation) {
+            const table = document.createElement("table");
+            table.className = "table table-bordered";
+            const tableBody = document.createElement("tbody");
+
+            recommendation.forEach((item) => {
+                const row = document.createElement("tr");
+                const cell = document.createElement("td");
+                cell.textContent = item;
+                row.appendChild(cell);
+                tableBody.appendChild(row);
+            });
+
+            table.appendChild(tableBody);
+            recommendationsContainer.appendChild(table);
+        } else {
+            recommendationsContainer.innerHTML = "<p class='text-center'>No recommendations available.</p>";
+        }
+    </script>
+    <br>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center mx-3">
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bp-tracking"><i class="fa fa-heartbeat fa-2x"></i> bp-tracking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/appointment"><i class="fa fa-medkit fa-2x"></i> Appointment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/community-support"><i class="fa fa-comments-o fa-2x"></i> Community
+                        support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recommendations"><i class="fa fa-stethoscope fa-2x"></i>
+                        Recommendations</a>
+                </li>
+                <li class="nav-item"></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+</body>
+</html>

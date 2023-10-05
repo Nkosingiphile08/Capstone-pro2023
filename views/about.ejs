@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>About Us</title>
@@ -8,53 +9,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
+
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.ejs" class="notifications-tab"><i class="fa fa-home fa-2x"></i>Home</a></li>
+                <li><a href="/index" class="notifications-tab"><i class="fa fa-home fa-2x"></i>Home</a></li>
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <h1>About Us</h1>
-        <p>Our mission is to empower individuals to take control of their health by providing a user-friendly platform
-            for predicting, monitoring and managing hypertension.</p>
-        <p>We understand the importance of keeping track of your hypertension or blood pressure.
-            Hypertension is a significant risk factor for various health conditions, including
-            heart disease and stroke. Regular monitoring can help you make informed decisions about your health and work
-            with healthcare professionals to manage your blood pressure effectively.</p>
-        <p>Our application allows you to:</p>
-        <ul>
-            <li>-To make record of your hypertension status and track your blood pressure readings over time.</li>
-            <li>-Set medication reminders to ensure you stay on top of your treatment plan.</li>
-            <li>-Book your preferable doctor's appointment</li>
-            <li>-Access our community status status where you can post and interact with other people about your
-                hypertension journey</li>
-            <li>-Access valuable information and resources about hypertension management and healthy lifestyle choices.
-            </li>
-        </ul>
-        <p>We are committed to providing a reliable and user-friendly experience, and we are always working to improve
-            our app to better serve your needs.</p>
-        <p>If you have any questions or feedback, please don't hesitate to reach out. Thank you for choosing
-            [Hypertension prediction app] for your hypertension monitoring journey!</p>
-        <p>Our contact details: 0769303072 or 0724302076</p>
-        <p>Thank you for visiting our app.</p>
-    </div>
-    <section>
-        <nav class="navbar-bottom">
-            <div class="navbar-content">
+    <header>
+        <div class="container text-center">
+            <h1>About Us</h1>
+        </div>
+    </header>
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+                <p>Our mission is to empower individuals to take control of their health by providing a user-friendly
+                    platform for predicting, monitoring, and managing hypertension.</p>
+                <p>We understand the importance of keeping track of your hypertension or blood pressure. Hypertension is
+                    a significant risk factor for various health conditions, including heart disease and stroke. Regular
+                    monitoring can help you make informed decisions about your health and work with healthcare
+                    professionals to manage your blood pressure effectively.</p>
+                <p>Our application allows you to:</p>
                 <ul>
-                    <li></li>
-                    <a href="bptracking.html"><i class="fa fa-heartbeat fa-2x"></i>BP tracking</a>
-                    <a href="appointment.ejs"><i class="fa fa-medkit fa-2x"></i>Appointment</a>
-                    <a href="community.html"><i class="fa fa-comments-o fa-2x"></i>Community support</a>
-                    <a href="recommendations.html"><i class="fa fa-stethoscope fa-2x"></i>Recommendations</a>
-                    <li></li>
+                    <li>To make a record of your hypertension status and track your blood pressure readings over time.
+                    </li>
+                    <li>Set medication reminders to ensure you stay on top of your treatment plan.</li>
+                    <li>Book your preferable doctor's appointment</li>
+                    <li>Access our community status where you can post and interact with other people about your
+                        hypertension journey</li>
+                    <li>Access valuable information and resources about hypertension management and healthy lifestyle
+                        choices.</li>
+                </ul>
+                <p>We are committed to providing a reliable and user-friendly experience, and we are always working to
+                    improve our app to better serve your needs.</p>
+                <p>If you have any questions or feedback, please don't hesitate to reach out. Thank you for choosing
+                    hypertension prediction app for your hypertension monitoring journey!</p>
+                <p>Our contact details: 076 9303 072 or 074 025 5952</p>
+                <p>Thank you for visiting our app.</p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center mx-3">
+            <div class="navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bp-tracking"><i class="fa fa-heartbeat fa-2x"></i> <bp-tracking></bp-tracking></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/appointment"><i class="fa fa-medkit fa-2x"></i> Appointment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/community-support"><i class="fa fa-comments-o fa-2x"></i> Community
+                            Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/recommendations"><i class="fa fa-stethoscope fa-2x"></i>
+                            Recommendations</a>
+                    </li>
                 </ul>
             </div>
         </nav>
-    </section>
+    </div>
+
 </body>
 
 </html>

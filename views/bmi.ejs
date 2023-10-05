@@ -5,16 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
-
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+<style>
+    .navbar-nav .nav-link .fa {
+        color: #03a4ff;
+    }
+</style>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index" class="notifications-tab"><i class="fa fa-home fa-2x"></i>Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <br>
     <div class="container">
-        <h1 class="mt-5">BMI Calculator</h1>
+        <h1 class="mt-5">Calculate your BMI:</h1>
         <form id="bmi-form" class="mt-3">
             <div class="form-group">
                 <label for="Age">Age:</label>
@@ -22,11 +35,11 @@
             </div>
             <div class="form-group">
                 <label for="Height">Height(ft):</label>
-                <input type="text" id="Height" class="form-control">
+                <input type="number" id="Height" class="form-control">
             </div>
             <div class="form-group">
                 <label for="Weight">Weight(kg):</label>
-                <input type="text" id="Weight" class="form-control">
+                <input type="number" id="Weight" class="form-control">
             </div>
             <button type="button" id="calculate-button" class="btn btn-primary">Calculate BMI</button>
         </form>
@@ -49,11 +62,11 @@
                     const bmi = weight / (heightInMeters * heightInMeters);
                     resultElement.textContent = `Your BMI is: ${bmi.toFixed(2)}`;
                     resultElement.classList.remove('text-danger');
-                    resultElement.classList.add('text-success'); // Add success styling
+                    resultElement.classList.add('text-success'); 
                 } else {
                     resultElement.textContent = 'Please enter valid age, height, and weight.';
-                    resultElement.classList.remove('text-success'); // Remove any previous success styling
-                    resultElement.classList.add('text-danger'); // Add danger styling
+                    resultElement.classList.remove('text-success'); 
+                    resultElement.classList.add('text-danger'); 
                 }
             });
         });

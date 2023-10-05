@@ -10,12 +10,17 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
 </head>
+<style>
+    .navbar-nav .nav-link .fa {
+        color: #03a4ff;
+    }
+</style>
 
 <body>
     <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="index.ejs">
+                <a class="navbar-brand" href="/index">
                     <i class="fa fa-home fa-2x"></i>
                     <br>Home
                 </a>
@@ -77,21 +82,31 @@
             </div>
         </div>
     </section>
-</Section>
-<section>
-    <nav class="navbar-bottom">
-        <div class="navbar-content">
-            <ul>
-                <li></li>
-                <a href="bptracking.ejs"><i class="fa fa-heartbeat fa-2x"></i>BPtracking</a>
-                <a href="appointment.ejs"><i class="fa fa-medkit fa-2x"></i>Appointment</a>
-                <a href="community.html"><i class="fa fa-comments-o fa-2x"></i>Community-support</a>
-                <a href="recommendations.html"><i class="fa fa-stethoscope fa-2x"></i>Recommendations</a>
-                <li></li>
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center mx-3">
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tracking"><i class="fa fa-heartbeat fa-2x"></i> BP-tracking</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/appointment"><i class="fa fa-medkit fa-2x"></i> Appointment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/community-support"><i class="fa fa-comments-o fa-2x"></i> Community
+                        support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recommendations"><i class="fa fa-stethoscope fa-2x"></i>
+                        Recommendations</a>
+                </li>
+                <li class="nav-item"></li>
             </ul>
         </div>
     </nav>
-</section>
+</div>
 
 <script>
     const Form = document.getElementById("myForm")

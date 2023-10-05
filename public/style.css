@@ -1,17 +1,60 @@
-.background-image {
-    background-image: url("/images/background.jpeg");
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh; /* Ensure the section covers the entire viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
+html, body {
+  background-image: url(images/image2.png) ;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: lightskyblue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .modal{
     width: min(400px, 90vw);
     height: 200px;
     border: 1px solid #03a4ff;
     
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  margin: 10px;
+}
+
+/* Apply fixed position to the navbar */
+.navbar-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+  background-color: #fff; /* Add a background color if needed */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional box shadow for visual effect */
+}
+
+
+/* Add custom styles to move the dropdown to the right */
+.menu {
+  right: 0;
+}
+
+/* Adjust the position of the toggle button */
+.navbar-toggler {
+  margin-right: 15px; /* Add some right margin to separate the toggle button from the dropdown */
+}
+
+/* Style the badge for notifications */
+.badge-danger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%); /* Center the badge in the top-right corner of the bell icon */
+}
+
+.blue-icon {
+  color: blue; /* or color: #007BFF; for Bootstrap primary color */
 }
