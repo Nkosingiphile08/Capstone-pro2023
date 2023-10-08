@@ -128,9 +128,11 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="Physical_activity">Physical Activity (minutes):</label>
-                        <input id="Physical_activity" placeholder="30" class="form-control" type="number" />
-
+                        <label for="Physical_activity">Are you physically active (Yes or No):</label>
+                        <select id="Physical_activity" class="form-control">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
                         <br>
                     </div>
 
@@ -213,18 +215,6 @@
             </div>
         </nav>
     </div>
-    <!-- <section>
-        <nav class="navbar-bottom">
-            <div class="navbar-content">
-                <ul>
-                    <li><a href="/tracking"><i class="fa fa-heartbeat fa-2x"></i> BP-tracking</a></li>
-                    <li><a href="/appointment"><i class="fa fa-medkit fa-2x"></i> Appointment</a></li>
-                    <li><a href="/community-support"><i class="fa fa-comments-o fa-2x"></i> Community support</a></li>
-                    <li><a href="/recommendations"><i class="fa fa-stethoscope fa-2x"></i> Recommendations</a></li>
-                </ul>
-            </div>
-        </nav>
-    </section> -->
 
     <script>
         console.log("Hello Express")
@@ -285,10 +275,9 @@
                 signUpModal.style.display = "flex"
             }
 
-
-
         })
     </script>
+
 </body>
 
 </html>

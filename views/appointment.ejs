@@ -17,75 +17,31 @@
 </style>
 
 <body>
-    <section class="position-relative"><br>
-        <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center mx-3">
-                <a class="navbar-brand" href="/index">
-                    <i class="fa fa-home fa-2x"></i>
-                    <br>Home
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/language">Languages</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/signup">
-                                <i class="fa fa-user"></i> Profile
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-utensils"></i> Nutrition
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <i class="fa fa-running"></i> Exercise
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </section>
-    <br>
-    <section>
-        <h1 class="card-header mt-4 text-center">Doctor's Appointment</h1>
-        </div>
-    </section>
     <section class="position-relative">
         <div class="container">
             <section class="card">
                 <h3 class="card-header mt-4 text-center">Book an Appointment</h3>
-                <form class="container" action="/appointments" method="post">
+                <form class="container" action="/appointments" method="post" onsubmit="return bookAppointment()">
                     <div class="form-group mt-2">
                         <label for="appointment-date">Select Date:</label>
                         <input type="date" name="date" id="appointment-date" class="form-control">
                     </div>
-
+    
                     <div class="form-group mt-2">
                         <label for="appointment-time">Select Time:</label>
                         <input type="time" name="time" id="appointment-time" class="form-control">
                     </div>
-
+    
                     <div class="form-group mt-2">
                         <label for="full-name">Full Name:</label>
                         <input type="text" name="name" id="full-name" class="form-control">
                     </div>
-
+    
                     <div class="form-group mt-2">
                         <label for="email">Email:</label>
                         <input type="email" name="email" id="email" class="form-control">
                     </div>
-
+    
                     <div class="form-group mt-2">
                         <label for="doctor">Select Doctor:</label>
                         <select id="doctor" class="form-control" name="doctor">
@@ -95,17 +51,41 @@
                                 <option value="<%=doc.name %>">
                                     <%=doc.name%>
                                 </option>
-                                <%})%>
+                                <%})%>             
                         </select>
                     </div>
-
+    
                     <div class="form-group mt-3 mb-5">
                         <button type="submit" class="btn btn-primary">Book Appointment</button>
                     </div>
                 </form>
-                </header>
+            </section>
         </div>
     </section>
+    
+    <script>
+        const bookedAppointments = []; // Initialize appointments as an empty array
+    
+        function bookAppointment() {
+            const selectDate = document.getElementById('appointment-date').value;
+            const selectTime = document.getElementById('appointment-time').value;
+            const selectDoctor = document.getElementById('doctor').value;
+    
+            const selectedAppointment = `${selectDate} ${selectTime} ${selectDoctor}`;
+    
+            if (bookedAppointments.includes(selectedAppointment)) {
+                // if (bookedAppointments.push(selectedAppointment)) {
+                alert('Appointment slot is already booked.');
+                return false; // Prevent form submission
+            } else {
+                // Assume a successful booking for demonstration
+                bookedAppointments.push(selectedAppointment);
+                alert('Appointment booked successfully.');
+                return true; // Allow form submission
+            }
+        }
+    </script>
+        
     <br>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center mx-3">
