@@ -7,10 +7,11 @@
   },
   "name": "new-folder",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "serve.js", 
   "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
+    "test": "",
+    "dev": "nodemon serve.js",
+    "start": "node serve.js"   
   },
   "keywords": [],
   "author": "",
