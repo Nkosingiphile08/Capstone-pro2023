@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Pressure Logger</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js">
+</head>
+<body>
+    <div id="app" x-data="app()">
+        <h1>Blood Pressure Logger</h1>
+        <div>
+            <label for="systolic">Systolic BP:</label>
+            <input type="number" id="systolic" x-model="systolic">
+        </div>
+        <div>
+            <label for="diastolic">Diastolic BP:</label>
+            <input type="number" id="diastolic" x-model="diastolic">
+        </div>
+        <div>
+            <label for="pulse">Pulse:</label>
+            <input type="number" id="pulse" x-model="pulse">
+        </div>
+        <button @click="logData">Log Data</button>
+        <div>
+            <canvas id="chart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>

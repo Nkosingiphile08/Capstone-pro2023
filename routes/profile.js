@@ -46,13 +46,15 @@ router.get("/languages", function (req,res) {
 router.get("/index", function (req, res) {
     res.render("index")
   })
-
 router.get("/nutrition", function (req, res) {
     res.render("nutrition")
   })
   router.get("/recommendations", function (req, res) {
     res.render("recommendations")
   })  
+  router.get("/chat", function (req, res) {
+    res.render("chat")
+  })
 // GET route to render the page with the form
 router.get("/delete-null-form", function (req,res) {
     res.render('delete-null-form') 
