@@ -101,27 +101,27 @@
         <div class="container">
             <section class="card">
                 <h3 class="card-header mt-4 text-center">Book an Appointment</h3>
-                <form class="container" action="/appointments" method="post">
+                <form class="container" action="/appointments" method="post" onsubmit="return bookAppointment()">
                     <div class="form-group mt-2">
                         <label for="appointment-date">Select Date:</label>
                         <input type="date" name="date" id="appointment-date" class="form-control">
                     </div>
-
+    
                     <div class="form-group mt-2">
                         <label for="appointment-time">Select Time:</label>
                         <input type="time" name="time" id="appointment-time" class="form-control">
                     </div>
-
+    
                     <div class="form-group mt-2">
                         <label for="full-name">Full Name:</label>
                         <input type="text" name="name" id="full-name" class="form-control">
                     </div>
-
+    
                     <div class="form-group mt-2">
                         <label for="email">Email:</label>
                         <input type="email" name="email" id="email" class="form-control">
                     </div>
-
+    
                     <div class="form-group mt-2">
                         <label for="doctor">Select Doctor:</label>
                         <select id="doctor" class="form-control" name="doctor">
@@ -131,15 +131,15 @@
                                 <option value="<%=doc.name %>">
                                     <%=doc.name%>
                                 </option>
-                                <%})%>
+                                <%})%>             
                         </select>
                     </div>
-
+    
                     <div class="form-group mt-3 mb-5">
                         <button type="submit" class="btn btn-primary">Book Appointment</button>
                     </div>
                 </form>
-                </header>
+            </section>
         </div>
     </section>
     <br>
