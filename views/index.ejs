@@ -27,7 +27,7 @@
             margin: auto;
             border-radius: 5px;
         }
-
+        
         .navbar-nav .nav-link .fa {
             color: #03a4ff;
         }
@@ -101,7 +101,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                         <li><a class="dropdown-item mr-3" href="/signup">Profile</a></li>
-                        <li><a class="dropdown-item" href="//nutrition">Nutrition</a></li>
+                        <li><a class="dropdown-item" href="/blog">Blog</a></li>
                         <li><a class="dropdown-item" href="/bmi">BMI</a></li>
                         <li><a class="dropdown-item" href="/languages">Languages</a></li>
                         <li><a class="dropdown-item" href="/about">About</a></li>
@@ -134,7 +134,7 @@
                     </div>
                 </div>
             </div>
-
+        
             <!-- This form is not linked to the backend -->
             <form id="myform">
                 <h3>Hello! Welcome to our hypertension prediction application!</h3>
@@ -176,16 +176,6 @@
                 </div>
                 <br>
 
-                <!-- 
-                    <button type="button" id="calculate-button" class="btn btn-primary">Calculate BMI</button>
-
-                    <p id="result" class="mt-3 text-success"></p> -->
-
-                <!-- <div class="form-group">
-                        <label for="BMI">BMI:</label>
-                        <input type="number" id="BMI" class="form-control">
-                    </div> -->
-
                 <div class="row">
                     <h4>Habits</h4>
                     <div class="form-group col-md-4 mx3">
@@ -203,14 +193,14 @@
                         <label for="alcohol_consumption_per_day">Alcohol Consumption(glasses per day):</label>
                         <input type="number" id="alcohol_consumption_per_day" class="form-control " placeholder="1">
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="Physical_activity">Are you physically active (Yes or No):</label>
                         <select id="Physical_activity" class="form-control">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
                         <br>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="row">
                     <div class="form-group col-md-4 mx3">
@@ -243,10 +233,10 @@
                     </div>
                 </div>
                 <br>
-                <button type="predict" class="btn btn-primary mt-3">Predict</button>
+                <button type="predict" class="btn btn-primary mt-3">Predict</button><br>
             </form>
             <br>
-            <br>
+
             <div id="results" class="alert alert-info border-1" role="alert">
                 Results Will Appear Here.
             </div>
@@ -266,26 +256,6 @@
         </div>
     </section>
     <br>
-    <!-- <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center mx-3">
-            <div class="navbar-collapse" id="navbarNav">
-                
-            </div>
-        </nav>
-    </div> -->
-    <!-- <section>
-        <nav class="navbar-bottom">
-            <div class="navbar-content">
-                <ul>
-                    <li><a href="/tracking"><i class="fa fa-heartbeat fa-2x"></i> BP-tracking</a></li>
-                    <li><a href="/appointment"><i class="fa fa-medkit fa-2x"></i> Appointment</a></li>
-                    <li><a href="/community-support"><i class="fa fa-comments-o fa-2x"></i> Community support</a></li>
-                    <li><a href="/recommendations"><i class="fa fa-stethoscope fa-2x"></i> Recommendations</a></li>
-                </ul>
-            </div>
-        </nav>
-    </section> -->
-
     <script>
         console.log("Hello Express")
 

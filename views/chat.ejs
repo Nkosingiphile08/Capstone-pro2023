@@ -87,7 +87,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
                         <li><a class="dropdown-item mr-3" href="/signup">Profile</a></li>
-                        <li><a class="dropdown-item" href="//nutrition">Nutrition</a></li>
+                        <li><a class="dropdown-item" href="/blog">Blog</a></li>
                         <li><a class="dropdown-item" href="/bmi">BMI</a></li>
                         <li><a class="dropdown-item" href="/languages">Languages</a></li>
                         <li><a class="dropdown-item" href="/about">About</a></li>
@@ -95,14 +95,15 @@
             </ul>
         </header>
     </div>
-
-    <div class="content chat">
-    <h1 id="chatroom-name"></h1>
-    <div id="messages"></div>
-    <textarea type="text" id="message-input" class="form-control" placeholder="Type your message"></textarea>
-    <button id="send-message" class="btn btn-primary mt-3">Send</button>
+    <div class="content chat text-center">
+        <h1 id="chatroom-name"></h1>
+        <div id="messages"></div>
+        <textarea type="text" id="message-input" class="form-control" placeholder="Type your message"></textarea>
+        <button id="send-message" class="btn btn-primary mt-3">Send</button>
+        
+        <!-- Button to go back -->
+        <button id="go-back" class="btn btn-primary mt-3" onclick="goBack()">Go Back</button>
     </div>
-
     <script>
         const chatroomId = new URLSearchParams(window.location.search).get('id');
 
@@ -169,6 +170,10 @@
             messagesDiv.appendChild(messageDiv);
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
         }
+         
+    function goBack() {
+        window.history.back();
+    }
     </script>
 </body>
 

@@ -46,8 +46,8 @@ router.get("/languages", function (req,res) {
 router.get("/index", function (req, res) {
     res.render("index")
   })
-router.get("/nutrition", function (req, res) {
-    res.render("nutrition")
+router.get("/blog", function (req, res) {
+    res.render("blog")
   })
   router.get("/recommendations", function (req, res) {
     res.render("recommendations")
